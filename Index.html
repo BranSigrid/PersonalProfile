@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Sigrid Anak Jackson - Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #ddd;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #000;
+        }
+
+        .matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: black;
+            overflow: hidden;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #222;
+            color: #ddd;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-picture {
+            width: 300px;
+            height: 300px;
+            border-radius: 20%;
+            object-fit: cover;
+            border: 5px solid #ddd;
+            margin: 2em auto;
+            display: block;
+            box-shadow: 0 0 20px rgba(221, 221, 221, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(221, 221, 221, 0.5);
+        }
+
+        .nav-container {
+            background-color: #333;
+            padding: 1em 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            display: inline-block;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #000;
+            background-color: #ddd;
+            border-radius: 4px;
+        }
+
+        .content {
+            padding: 2em;
+            margin-top: 2em;
+        }
+
+        .section {
+            margin-bottom: 2em;
+            padding: 2em;
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            color: black;
+            margin-bottom: 0.5em;
+        }
+
+        .project-link {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 10px;
+        }
+
+        .project-link:hover {
+            color: grey;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .list-group-item {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .contact-section {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-links a {
+            color: #ddd;
+            transition: color 0.3s ease;
+            margin-right: 1em;
+            display: inline-block;
+            font-size: 2em;
+        }
+
+        .contact-links a:hover {
+            color: grey;
+        }
+
+        .big-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .justified-text {
+            text-align: justify;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .container-timeline {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .container-timeline::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .content-timeline {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            color: black;
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .container-timeline {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .container-timeline::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 15px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-picture {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5em 0;
+            }
+
+            .content {
+                padding: 1em;
+            }
+
+            .section {
+                padding: 1em;
+            }
+
+            .big-text {
+                font-size: 2em;
+            }
+
+            .contact-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-links a {
+                font-size: 1.5em;
+                margin: 0.5em;
+            }
+
+            .back-to-top {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-picture {
+                width: 120px;
+                height: 120px;
+            }
+
+            nav a {
+                display: block;
+                text-align: center;
+                margin: 5px 0;
+            }
+
+            .content {
+                padding: 1em;
+            }
+
+            .section {
+                padding: 1em;
+            }
+
+            .big-text {
+                font-size: 1.5em;
+            }
+
+            .contact-links a {
+                font-size: 1.2em;
+                margin: 0.5em;
+            }
+
+            .back-to-top {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #333;
+            color: #ddd;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="matrix">
+        <canvas id="matrix"></canvas>
+    </div>
+
+    <header class="header">
+        <h1>Brandon Sigrid Anak Jackson - Profile</h1>
+    </header>
+
+    <div class="nav-container">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <img src="IMG20221006215133.jpg" alt="Profile Picture" class="profile-picture">
+            <p class="justified-text">A self-taught web developer with a passion for coding and a knack for creating efficient and effective web solutions. With a Graduate Diploma in Information System Administration from Sarawak Skills, I have honed my skills in various programming languages and frameworks. I am dedicated to continuously improving my knowledge and staying up-to-date with the latest industry trends.</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects - feel free to click on it for the live demo of these projects</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="https://bransigrid.github.io/LearningManagementSystemWebBased/" target="_blank" class="project-link">Final Year Project (Learning Management System)</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://github.com/BrandonJackson/project2" target="_blank" class="project-link">Portfolio website</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="underdev.html" target="_blank" class="project-link">Project 3 (Coming soon)</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="container-timeline left">
+                    <div class="content-timeline">
+                        <h3>SMK Green Road (2015 - 2019)</h3>
+                        <p>Sijil Pelajaran Malaysia (SPM)</p>
+                    </div>
+                </div>
+                <div class="container-timeline right">
+                    <div class="content-timeline">
+                        <h3>Sarawak Skills (2020 - 2021)</h3>
+                        <p>Sijil Kemahiran Malaysia Tahap 2 (SKM 2)- Pengurusan Pejabat/Office Administration</p>
+                    </div>
+                </div>
+                <div class="container-timeline left">
+                    <div class="content-timeline">
+                        <h3>Sarawak Skills (2021 - 2022)</h3>
+                        <p>Sijil Kemahiran Malaysia Tahap 3 (SKM 3) - Penyeliaan Penguran Pejabat/Office Administration Supervision</p>
+                    </div>
+                </div>
+                <div class="container-timeline right">
+                    <div class="content-timeline">
+                        <h3>Sarawak Skills (2023 - 2024)</h3>
+                        <p>Diploma Kemahiran Sarawak Tahap 4 (DKM 4) - Pentadbiran Sistem Maklumat Information System Administration</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Work experience</h2>
+            <div class="timeline">
+                <div class="container-timeline left">
+                    <div class="content-timeline">
+                        <h3>Intern (IT Department | 4 March 2024 - 24 May 2024)</h3>
+                        <p>As an IT intern at Sarawak Skills, I provided technical support for students and faculty, handling issues like hardware malfunctions, software problems, and network connectivity. I was involved in maintaining the college’s IT systems, including software updates and virus scans. I managed help desk tickets, prioritizing and resolving requests while escalating complex issues when needed. I also helped with network management tasks and contributed to various IT projects, such as system upgrades and new software deployments. I assisted in organizing workshops and creating user guides to improve support resources. Through this role, I gained skills in troubleshooting technical issues, network administration, and project support, and I helped improve the efficiency of the help desk and documentation processes.
+                        </p>
+                    </div>
+                </div>
+                <div class="container-timeline right">
+                    <div class="content-timeline">
+                        <h3>Volunteer (IT Department | 25 May 2024 - 24 June 2024)</h3>
+                        <p>s a volunteer in the IT Department at Sarawak Skills, I assisted with web administration tasks including updating website content, managing user accounts, and troubleshooting website issues. I helped maintain the college’s website by ensuring that all information was current and functional. I also supported the development of new web features and collaborated with the team to improve website functionality and user experience. Through this experience, I gained skills in web management, problem-solving, and teamwork while contributing to the enhancement of the college’s online presence.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Get In Touch - Contact Me</h2>
+            <div class="contact-section">
+                <div class="contact-links">
+                    <a href="https://github.com/BranSigrid" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/channel/yourchannel" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@yourprofile" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:branrol1234@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY;
+            var backToTopButton = document.querySelector('.back-to-top');
+            if (scrollPosition > 500) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = Array(256).join(1).split('');
+
+        const draw = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#0F0';
+            letters.map((y_pos, index) => {
+                const text = String.fromCharCode(3e4 + Math.random() * 33);
+                const x_pos = index * 10;
+                ctx.fillText(text, x_pos, y_pos);
+                letters[index] = (y_pos > canvas.height && Math.random() > 0.975) ? 0 : y_pos + 10;
+            });
+        };
+        setInterval(draw, 33);
+    </script>
+</body>
+
+</html>

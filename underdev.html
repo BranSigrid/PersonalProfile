@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Under Development</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f7f9fc; /* Light background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        .bubble:nth-of-type(1) {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 10%;
+            background: radial-gradient(circle, rgba(255, 99, 132, 0.7), rgba(255, 99, 132, 0));
+            animation: bubble 10s infinite;
+        }
+        .bubble:nth-of-type(2) {
+            width: 160px;
+            height: 160px;
+            top: 20%;
+            left: 30%;
+            background: radial-gradient(circle, rgba(54, 162, 235, 0.7), rgba(54, 162, 235, 0));
+            animation: bubble 12s infinite;
+        }
+        .bubble:nth-of-type(3) {
+            width: 200px;
+            height: 200px;
+            top: 40%;
+            left: 50%;
+            background: radial-gradient(circle, rgba(75, 192, 192, 0.7), rgba(75, 192, 192, 0));
+            animation: bubble 14s infinite;
+        }
+        .bubble:nth-of-type(4) {
+            width: 140px;
+            height: 140px;
+            top: 60%;
+            left: 20%;
+            background: radial-gradient(circle, rgba(255, 206, 86, 0.7), rgba(255, 206, 86, 0));
+            animation: bubble 11s infinite;
+        }
+        .bubble:nth-of-type(5) {
+            width: 180px;
+            height: 180px;
+            top: 30%;
+            left: 70%;
+            background: radial-gradient(circle, rgba(153, 102, 255, 0.7), rgba(153, 102, 255, 0));
+            animation: bubble 13s infinite;
+        }
+        .bubble:nth-of-type(6) {
+            width: 220px;
+            height: 220px;
+            top: 70%;
+            left: 40%;
+            background: radial-gradient(circle, rgba(255, 159, 64, 0.7), rgba(255, 159, 64, 0));
+            animation: bubble 15s infinite;
+        }
+        @keyframes bubble {
+            0% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+        }
+        .alert {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px; /* Reduced padding for smaller screens */
+            margin: 0 15px; /* Added margin for small screens */
+        }
+        .countdown {
+            font-size: 1.25rem; /* Slightly smaller font size for mobile */
+            font-weight: bold;
+            margin-bottom: 15px; /* Reduced margin for mobile */
+        }
+        .btn-back {
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem; /* Slightly smaller font size for mobile */
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 20px; /* Adjusted margin for smaller screens */
+        }
+        .btn-back:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .btn-back:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+        }
+        .audio-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            padding: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+        }
+        .audio-controls:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        .audio-controls .icon {
+            font-size: 24px;
+            color: #007bff;
+        }
+        @media (max-width: 576px) {
+            .countdown {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+            .btn-back {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay loop muted>
+        <source src="Y2meta.app-Yellow Among Us Twerk (Original)-(1080p).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Bubble Background -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <!-- Content -->
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="alert" role="alert">
+                    <h1 class="display-4">Page Under Development</h1>
+                    <p class="lead">This page is currently under development. Please check back later.</p>
+                    <p>Thank you for your patience!</p>
+                    <div id="countdown" class="countdown">Loading...</div>
+                    <a href="Index.html" class="btn btn-back">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Countdown Timer Script -->
+    <script>
+        function updateCountdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 7); // Set to 1 week from now
+
+            const countdown = document.getElementById('countdown');
+
+            function calculateTimeRemaining() {
+                const now = new Date();
+                const timeRemaining = endDate - now;
+
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                return {
+                    days,
+                    hours,
+                    minutes,
+                    seconds
+                };
+            }
+
+            function displayTime() {
+                const { days, hours, minutes, seconds } = calculateTimeRemaining();
+                countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            displayTime();
+            setInterval(displayTime, 1000); // Update the countdown every second
+        }
+
+        updateCountdown();
+    </script>
+    <div class="audio-controls" id="audioControl">
+        <span class="icon">⏸️</span>
+    </div>
+    <audio id="audioPlayer" src="Y2meta.app - Europapa (Ringtone) (128 kbps) (1).mp3" type="audio/mpeg" loop autoplay></audio>
+    <script>
+        const audioControl = document.getElementById('audioControl');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const icon = audioControl.querySelector('.icon');
+
+        audioControl.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                icon.textContent = '⏸️'; // Pause icon
+            } else {
+                audioPlayer.pause();
+                icon.textContent = '▶️'; // Play icon
+            }
+        });
+    </script>
+</body>
+</html>
